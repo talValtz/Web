@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}Fetch - BackEnd{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('search.static', filename='css/search.css') }}"/>
+    <script defer src="{{ url_for('search.static' ,filename='js/search.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>Search</h1>
+{% endblock %}
+
+{% block content %}
+    <nav>
+        <div class="container">
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="PickTrainType">Workout type</label>
+                    </div>
+                    <div class="col-50">
+                        <select id="PickTrainType" name="PickTrainType">
+                            <option value="Yoga">Yoga</option>
+                            <option value="TRX">TRX</option>
+                            <option value="Running">Running</option>
+                            <option value="Swimming">Swimming</option>
+                            <option value="Tennis">Tennis</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="PickDate">Date</label>
+                    </div>
+                    <div class="col-50">
+                        <input type="date" id="PickDate" name="PickDate"
+                               min="2022-05-09"
+                               required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="PickTimeRange">Range time</label>
+                    </div>
+                    <br>
+                    <div class="col-35">
+                        <label for="From" id="SearchFrom">From</label>
+                        <br>
+                        <label for="To" id="SearchTo">To</label>
+                    </div>
+                    <div class="col-35">
+                        <input type="time" id="PickTimeRange1" name="PickTimeRange1"
+                               min="10:00"
+                               required>
+                        <input type="time" id="PickTimeRange2" name="PickTimeRange2"
+                               required>
+                    </div>
+            </form>
+    </nav>
+    <button id="SearchBtn" onclick="ViewSearch()">Search <i class="fa fa-search"></i></button>
+    <div class="badInput" id="BadInput">
+        <p>please fill in the empty fields!!!</p>
+    </div>
+    <br><br>
+    <div id="containerWorkoutsSearch">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Workouts type</th>
+                <th>Creator</th>
+                <th>Aproval Status</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tr data-url="WorkOutDetails.html">
+                <td>Yoga</td>
+                <td>Yossi Aloni</td>
+                <td>Pending</td>
+                <td>09/05/22</td>
+                <td>10:30-11:30</td>
+                <td><a href="#Yoga">Watch details </a></td>
+            </tr>
+            <tr>
+                <td>TRX</td>
+                <td>Me</td>
+                <td>Approval</td>
+                <td>10/05/22</td>
+                <td>19:30-20:30</td>
+                <td><a href="WorkOutDetails.html">Watch details </a></td>
+            </tr>
+            <tr>
+                <td>Swimming</td>
+                <td>Naama Arseni</td>
+                <td>Postponed</td>
+                <td>11/05/22</td>
+                <td>16:00-17:00</td>
+                <td><a href="#Swimming">Watch details </a></td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('myProfile.static', filename='css/myProfile.css') }}"/>
+    <script defer src="{{ url_for('myProfile.static' ,filename='js/myProfile.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>My Details</h1>
+    <h2>My Profile</h2>
+{% endblock %}
+
+{% block content %}
+
+    <nav>
+        <div class="container">
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="firstname" placeholder="Coral" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lastname" placeholder="Inbar" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="Email">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="Email" name="Email" placeholder="Coralel@post.bgu.ac.il" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">User Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="Uname" name="UserName" placeholder="YoniTal" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="Gender">Gender</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="Gender" name="Gender" disabled>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="Academic">Academic Institution</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="Academic" name="Academic" disabled>
+                            <option value="Male">BGU</option>
+                            <option value="Female">Ariel</option>
+                            <option value="Male">SCE</option>
+                            <option value="Female">Bar Ilan</option>
+                            <option value="Male">Tel Aviv University</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="City">City</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="City" name="City" disabled>
+                            <option value="australia">Beer Sheva</option>
+                            <option value="canada">Afula</option>
+                            <option value="usa">Ashkelon</option>
+                            <option value="usa">Tel Aviv</option>
+                            <option value="usa">Ashdod</option>
+                            <option value="usa">Modi'in</option>
+                            <option value="usa">Kiriay Shmona</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="AboutMe">About me</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="AboutMe" name="AboutMe" placeholder="I like TRX !!! Student in BGU"
+                                  style="height:200px" disabled></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="Edit" onclick="EditFunction()"> Edit</button>
+                    <br> <br>
+                    <button type="submit" id="FinishEdit" onclick="FinishEdit()" disabled> Finish</button>
+                </div>
+            </form>
+        </div>
+    </nav>
+{% endblock %}

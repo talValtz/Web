@@ -3,27 +3,64 @@ from flask import Flask
 
 ###### App setup
 app = Flask(__name__)
-app.config.from_pyfile('settings.py')
+#app.config.from_pyfile('settings.py')
 
 ###### Pages
-## Homepage
+
+
+## Conditions
+from pages.conditions.conditions import conditions
+app.register_blueprint(conditions)
+
+## search
+from pages.search.search import search
+app.register_blueprint(search)
+
+## homepage
 from pages.homepage.homepage import homepage
 app.register_blueprint(homepage)
 
-## About
-from pages.about.about import about
-app.register_blueprint(about)
+## myProfile
+from pages.myProfile.myProfile import myProfile
+app.register_blueprint(myProfile)
 
-## Catalog
-from pages.catalog.catalog import catalog
-app.register_blueprint(catalog)
+##Workouts
+from pages.workouts.workouts import workouts
+app.register_blueprint(workouts)
+
+## new workout
+from pages.newWorkout.newWorkout import newWorkout
+app.register_blueprint(newWorkout)
+
+## calendar
+from pages.calendar.calendar import calendar
+app.register_blueprint(calendar)
+
+##contact us page
+from pages.contactUs.contactUs import contactUs
+app.register_blueprint(contactUs)
 
 ## Page error handlers
 from pages.page_error_handlers.page_error_handlers import page_error_handlers
 app.register_blueprint(page_error_handlers)
 
+## Login
+from pages.logIn.logIn import logIn
+app.register_blueprint(logIn)
+
+##sighUp
+from pages.signUp.signUp import signUp
+app.register_blueprint(signUp)
+
+
+
 
 ###### Components
-## Main menu
-from components.main_menu.main_menu import main_menu
-app.register_blueprint(main_menu)
+## navbar
+from components.navBar.navBar import navBar
+app.register_blueprint(navBar)
+
+## footer
+from components.footer.footer import footer
+app.register_blueprint(footer)
+
