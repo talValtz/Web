@@ -3,7 +3,7 @@ from flask import Flask
 
 ###### App setup
 app = Flask(__name__)
-#app.config.from_pyfile('settings.py')
+app.config.from_pyfile('settings.py')
 
 ###### Pages
 
@@ -51,6 +51,10 @@ app.register_blueprint(logIn)
 ##sighUp
 from pages.signUp.signUp import signUp
 app.register_blueprint(signUp)
+
+##workoutDetails
+from pages.workoutDetails.workoutDetails import workoutDetails
+app.register_blueprint(workoutDetails)
 
 
 

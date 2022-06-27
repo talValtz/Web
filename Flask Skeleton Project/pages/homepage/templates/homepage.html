@@ -10,6 +10,10 @@
 
 {% block bodyTitle %}
     <h1>Welcome To TrainGether</h1>
+    {% if session['user'] %}
+        <h3 class="userName_Sessin"> {{ session['user']}} </h3>
+    {% endif %}
+
     <h2>You have reached a place where you can find partners for every training,</h2>
     <h2> get motivated, create experiences, and meet new partners.</h2>
 {% endblock %}

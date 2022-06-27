@@ -17,32 +17,69 @@
     background-size: cover;
     font-weight: bold;
 }
-  input {
-	padding: 10px;
-	width: 100%;
-	font-size: 17px;
-	font-family: Raleway;
-	border: 1px solid #aaaaaa;
-  height: 20%;
-  }
 
-  /* Mark input boxes that gets an error on validation: */
-  input.invalid {
-	background-color: #ffdddd;
-  }
+input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    height: 20%;
+}
 
-  /* Hide all steps by default: */
-  .tab {
-	display: none;
-  font-size: 20px;
-  }
-  .col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+    background-color: #ffdddd;
 }
-  .col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+    font-size: 20px;
 }
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+    font-size: 20px;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #04AA6D;
+}
+
+#btnD{
+    overflow:auto;
+}
+

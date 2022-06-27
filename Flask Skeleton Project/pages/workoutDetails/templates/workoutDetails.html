@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block title %}Workouts details{% endblock %}
+{% block page_head %}
+    <link rel="stylesheet" href="{{ url_for('workoutDetails.static', filename='css/workoutDetails.css') }}"/>
+    <script defer src="{{ url_for('workoutDetails.static' ,filename='js/workoutDetails.js') }}"></script>
+{% endblock %}
+
+
+{% block bodyTitle %}
+    <h1>My Details</h1>
+    <h2>Workouts Details </h2>
+    <h1>TRX</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="train_text_box">
+    <p1>TRX is a workout system that uses gravity and body weight to perform
+       exercises to strengthen your core and increase muscular endurance,
+       while providing a total body workout.<br>
+       The best thing is that all fitness levels can join in because you’re
+       in control of how much your want to challenge yourself on each exercise!
+       Simply adjust your body position to add or decrease resistance.
+    </p1>
+  </div>
+
+  <div class="see_details">
+    <div class="row">
+      <div class="col-25">
+        <label for="Creator">Creator:</label>
+      </div>
+      <div class="col-75">
+        <p class="output1" id="work_Creator">Me</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="date">Date:</label>
+      </div>
+      <div class="col-75">
+        <p class="output2" id="work_Date"> 10/05/22</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="Time">Time:</label>
+      </div>
+      <div class="col-75">
+        <p class="output3" id="work_Time">19:30-20:30</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="Gender">Gender:</label>
+      </div>
+      <div class="col-75">
+        <p class="output4" id="work_Gender">Female</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+     <label for="NumOffParticipants">Number off participants:</label>
+      </div>
+      <div class="col-50">
+         <p class="output5" id="work_NumOffPart">20</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="Participants">Participants:</label>
+      </div>
+      <div class="col-75">
+        <div class="output6">
+          <div id="containerWorkouts">
+            <table  id="work_Participants" class="table">
+              <thead>
+              <tr >
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Age</th>
+              <th>UserName</th>
+              </tr>
+             </thead>
+
+             <tbody>
+             <tr>
+              <td>Yoni</td>
+              <td>Ronov </td>
+              <td>26</td>
+              <td>Yoniiiiiiiii</td>
+            </tr>
+
+            <tr>
+              <td>Tal</td>
+              <td>Valtzer </td>
+              <td>25</td>
+              <td>Taltul</td>
+            </tr>
+
+            <tr>
+              <td>Inbar</td>
+              <td>Duvdevani </td>
+              <td>27</td>
+              <td>Inbara</td>
+            </tr>
+
+            <tr>
+              <td>Coral</td>
+              <td>Eli </td>
+              <td>25</td>
+              <td>Coralela</td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+          <div class="joinUNbutton">
+            <div id="JoinBtn">
+              <div class="joinBtn" onclick="JoinWorkout()"></div>
+            </div>
+            <div id="Unsubscribe" hidden>
+              <div class="unsubscribe" onclick="deleteMyself()"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="place">Meet you here:</label>
+        <div>City: Beer sheva</div>
+        <div>Address: גרץ 7</div>
+        <div id="map3">
+
+
+          <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+            defer
+          ></script>
+
+       </div>
+
+      </div>
+      <div class="col-75">
+        <p class="output7" id="work_Place"></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+{% endblock %}

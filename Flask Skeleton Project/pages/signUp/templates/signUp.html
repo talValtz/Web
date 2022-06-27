@@ -6,7 +6,12 @@
     <link rel="stylesheet" href="{{ url_for('signUp.static', filename='css/signUp.css') }}"/>
     <script defer src="{{ url_for('signUp.static' ,filename='js/signUp.js') }}"></script>
 </head>
+
 <body>
+<div id="singInTitle"><h1> Welcome To TrainGether
+</h1>
+</div>
+
 <div id="singInTitle"><h1> Welcome To TrainGether</h1>      </div>
 
  <form id="SignForm" action="../templates/MainPage.html" method="post">
@@ -148,11 +153,6 @@
     </div>
 
  </form>
-
-
-
-
-
 {% include('footer.html') %}
 
 </body>

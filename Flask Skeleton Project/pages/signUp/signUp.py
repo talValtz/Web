@@ -4,5 +4,5 @@ from flask import Blueprint, render_template
 signUp = Blueprint('signUp', __name__, static_folder='static', static_url_path='/signUp', template_folder='templates')
 
 @signUp.route('/signUp')
-def redirect_homepage():
+def redirect_signUp():
      return render_template('signUp.html')

@@ -1,0 +1,102 @@
+.train_text_box {
+    border-style: outset;
+    /*  margin-left: center;  put text_box in the center*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+.p1 {
+    font-size: 20px;
+}
+
+.see_details {
+    padding: 30px;
+}
+
+/* the position of the join button*/
+.joinUNbutton {
+    margin-top: -18%;
+    margin-right: 10%;
+    float: right;
+}
+
+#JoinBtn .joinBtn {
+    background-image: url(../media/JoinWorkout.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: flex-end;
+    width: 100px;
+    height: 100px;
+}
+
+#JoinBtn { /* affect the text*/
+    text-align: center;
+    color: #81c6cf;
+    font-size: 25px;
+}
+
+.unsubscribe {
+    /*margin: 35px 0 0 50px;*/
+    background-image: url(../media/Unsubscribe.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: flex-end;
+    width: 80px;
+    height: 80px;
+}
+
+#Unsubscribe {
+    text-align: center;
+    color: #81c6cf;
+    font-size: 25px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #94b9c9cf;
+}
+
+thead {
+
+    overflow: hidden;
+    background: linear-gradient(to bottom right, rgba(239, 159, 172, 0.82), rgba(154, 175, 246, 0.865));
+    font-size: larger;
+}
+
+table {
+
+    grid-area: main;
+}
