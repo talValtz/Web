@@ -20,6 +20,15 @@
         </div>
         <table class="table">
             <thead>
+            	{%for ride in aspassenger%}
+			<tr>
+				<td><a href="{{url_for('UserProfile.index', ID=ride['DriverID'])}}">{{ride['DriverName']}}</a></td>
+				<td>{{ride['Origin']}}</td>
+				<td>{{ride['Destination']}}</td>
+				<td>{{ride['DepartureTime']}}</td>
+				<td><a href="{{url_for('RankDriver.index', ID=ride['DriverID'], RideID=ride['ID'])}}">Rate Driver</a></td>
+			</tr>
+			{%endfor%}
             <tr>
                 <th>Workouts type</th>
                 <th>Creator</th>
