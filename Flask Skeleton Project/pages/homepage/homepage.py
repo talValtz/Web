@@ -6,12 +6,12 @@ homepage = Blueprint('homepage', __name__, static_folder='static', static_url_pa
 # Routes
 
 
-@homepage.route('/')
+@homepage.route('/home')
 def index():
+
     return render_template('homepage.html')
 
 @homepage.route('/homepage')
-@homepage.route('/home')
 def redirect_homepage():
     return redirect(url_for('homepage.index'))
 

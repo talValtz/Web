@@ -17,19 +17,24 @@
         <br>
         <span class="AnimationLogIn-num two">LOG-IN</span>
     </h2>
+    <div>
+        <h1>{{ msg }}</h1>
+    </div>
 </div>
 <div>
     <button class="LogInBotton" onclick="ClickFunctionLogIn()" style="width:auto;"> Login</button>
 </div>
-<div><a href="SignIn.html">Don't have an acount?</a></div><br><br><br>
+<div><a href="SignIn.html">Don't have an acount?</a></div>
+<br><br><br>
 
 
 <div id="id01" class="modal">
-    <form class="modal-content animate" action="{{url_for('logIn.login')}}" method="post">
+    <form class="modal-content animate" action="{{ url_for('logIn.login') }}" method="post">
         <div class="imgcontainer">
             <span onclick="ClickFunctionCloseNone()" class="close" title="Close Modal">&times;</span>
             <img src="{{ url_for('logIn.static', filename='media/SportMan.jpg') }}" alt="SportMan" class="SportMan">
         </div>
+
 
         <div class="container">
             <label for="uname"><b>Username</b></label>
@@ -46,9 +51,6 @@
 
     </form>
 </div>
-
-
-
 
 
 {% include('footer.html') %}

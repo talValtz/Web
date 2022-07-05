@@ -18,51 +18,18 @@
             <a href="/newWorkout" class="addBtn"></a>
             <p>Add New</p>
         </div>
+    <h1>Workouts Created By Me</h1>
         <table class="table">
-            <thead>
-            	{%for ride in aspassenger%}
-			<tr>
-				<td><a href="{{url_for('UserProfile.index', ID=ride['DriverID'])}}">{{ride['DriverName']}}</a></td>
-				<td>{{ride['Origin']}}</td>
-				<td>{{ride['Destination']}}</td>
-				<td>{{ride['DepartureTime']}}</td>
-				<td><a href="{{url_for('RankDriver.index', ID=ride['DriverID'], RideID=ride['ID'])}}">Rate Driver</a></td>
-			</tr>
-			{%endfor%}
-            <tr>
-                <th>Workouts type</th>
-                <th>Creator</th>
-                <th>Aproval Status</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th></th>
-            </tr>
-            </thead>
 
-            <tr data-url="WorkOutDetails.html">
-                <td>Yoga</td>
-                <td>Yossi Aloni</td>
-                <td>Pending</td>
-                <td>09/05/22</td>
-                <td>10:30-11:30</td>
-                <td><a href="#Yoga">Watch details </a></td>
-            </tr>
-            <tr>
-                <td>TRX</td>
-                <td>Me</td>
-                <td>Approval</td>
-                <td>10/05/22</td>
-                <td>19:30-20:30</td>
-                <td><a href="/workoutDetails">Watch details </a></td>
-            </tr>
-            <tr>
-                <td>Swimming</td>
-                <td>Naama Arseni</td>
-                <td>Postponed</td>
-                <td>11/05/22</td>
-                <td>16:00-17:00</td>
-                <td><a href="#Swimming">Watch details </a></td>
-            </tr>
+            {% for  workout in workoutsCreated %}
+                <div class="container">
+                <h3>Workout Type:</h3>
+                <h3>{{ workout['Workout_type'] }}</h3>
+
+                </div>
+
+            {% endfor %}
+
 
         </table>
     </div>
