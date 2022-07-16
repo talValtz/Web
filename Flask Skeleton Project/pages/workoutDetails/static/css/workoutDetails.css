@@ -100,3 +100,12 @@ table {
 
     grid-area: main;
 }
+
+.containerWorkout {
+    border: 3px solid #41b3b3;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px;
+
+
+}

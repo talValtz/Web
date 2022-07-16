@@ -4,6 +4,7 @@
 {% block page_head %}
     <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
     <script defer src="{{ url_for('homepage.static' ,filename='js/homepage.js') }}"></script>
+    {{ gmap.js }}
 
 {% endblock %}
 
@@ -50,6 +51,8 @@
 
         </div>
     </div>
+
+
 
 
 {% endblock %}

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template, session,request,redirect,url_for
 from utilities.models.workoutsModel import workoutsModel
 
 # main_menu blueprint definition
@@ -14,3 +14,9 @@ def redirect_workouts():
     cw = list(workoutsModel.ViewMyWorkouts(session["user"]))
     print(cw)
     return render_template('workouts.html', current_user=session["user"], workoutsCreated=cw)
+
+@workouts.route('/WorkoutDetails', methods=['POST'])
+def workoutDetails():
+    session['workoutID']=request.form['WorkoutID']
+    print(session['workoutID'])
+    return redirect(url_for('workoutDetails.index'))

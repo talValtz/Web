@@ -18,20 +18,27 @@
             <a href="/newWorkout" class="addBtn"></a>
             <p>Add New</p>
         </div>
-    <h1>Workouts Created By Me</h1>
-        <table class="table">
+        <div class="myWorkoutsContainer">
+            <h1>Workouts Created By Me</h1>
+
 
             {% for  workout in workoutsCreated %}
-                <div class="container">
-                <h3>Workout Type:</h3>
-                <h3>{{ workout['Workout_type'] }}</h3>
+                <div class="containerWorkout">
+                    <h3>Workout Type: {{ workout['Workout_type'] }}</h3>
+                    <h3> Date: {{ workout['workout_date'] }}</h3>
+                    <h3> Date: {{ workout['workout_time'] }}</h3>
+                    <form action="/WorkoutDetails" method="post">
+                        <input type="hidden" name="WorkoutID" value="{{ workout['trainingID'] }}">
+                        <input type="submit" value="Watch details" id="details">
+                    </form>
+
 
                 </div>
-
             {% endfor %}
 
 
-        </table>
+        </div>
+
     </div>
 
 
