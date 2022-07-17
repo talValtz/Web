@@ -18,6 +18,12 @@ class workoutsModel:
 		query = "SELECT * FROM participant as p inner join users as u on p.participant=u.User_name WHERE p.training=%s"
 		return dbManager.fetch(query, (trainingID,))
 
+	def ViewCallendar(self,userName):
+		query = "SELECT * FROM participant as p inner join training as t on p.training=t.trainingID WHERE p.participant=%s"
+		return dbManager.fetch(query, (userName,))
+
+
+
 workoutsModel = workoutsModel()
 
 

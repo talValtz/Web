@@ -4,7 +4,7 @@
 {% block page_head %}
     <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
     <script defer src="{{ url_for('homepage.static' ,filename='js/homepage.js') }}"></script>
-    {{ gmap.js }}
+
 
 {% endblock %}
 
@@ -12,7 +12,7 @@
 {% block bodyTitle %}
     <h1>Welcome To TrainGether</h1>
     {% if session['user'] %}
-        <h3 class="userName_Sessin"> {{ session['user']}} </h3>
+        <h3 class="userName_Sessin"> {{ session['user'] }} </h3>
     {% endif %}
 
     <h2>You have reached a place where you can find partners for every training,</h2>
@@ -52,6 +52,27 @@
         </div>
     </div>
 
+
+    <div>
+        <h1>Flask Google Maps Example</h1>
+
+        <h2> Google Dev Bus - Rua Quatá, 255 </h2>
+        {% with %}
+
+            {% set location=(-23.599097,-46.675903) %}
+            {% set style="width:500px;height:500px;" %}
+
+
+            <iframe loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ
+                    &q=Space+Needle,Seattle+WA">
+            </iframe>
+
+
+        {% endwith %}
+    </div>
 
 
 

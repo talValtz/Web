@@ -1,9 +1,11 @@
 from flask import Flask
-
+from flask_googlemaps import GoogleMaps
+from flask_googlemaps import Map, icons
 
 ###### App setup
 app = Flask(__name__)
 app.config.from_pyfile('settings.py')
+
 
 
 ###### Pages
@@ -36,6 +38,9 @@ app.register_blueprint(newWorkout)
 ## calendar
 from pages.calendar.calendar import calendar
 app.register_blueprint(calendar)
+
+#############
+
 
 ##contact us page
 from pages.contactUs.contactUs import contactUs
