@@ -13,8 +13,11 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("submit").style.display="inline";
+    document.getElementById("nextBtn").style.display="none";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("submit").style.display="none";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
@@ -99,6 +102,7 @@ const eqfeed_callback = function (results) {
   for (let i = 0; i < results.features.length; i++) {
     const coords = results.features[i].geometry.coordinates;
     const latLng = new google.maps.LatLng(coords[1], coords[0]);
+
     google.maps.event.addListener(map, 'click', function(event) {
       placeMarker(event.latLng);
     });
@@ -119,6 +123,8 @@ function placeMarker(location) {
     var infowindow = new google.maps.InfoWindow({
       content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
     });
+    document.getElementById("lat").value=location.lat();
+    document.getElementById("lng").value=location.lng();
     infowindow.open(map,marker);
   }
 
@@ -154,3 +160,13 @@ infowindow.open(map,marker);
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+function TDate() {
+    var UserDate = document.getElementById("Date").value;
+    var ToDate = new Date();
+
+    if (new Date(UserDate).getTime() <= ToDate.getTime()) {
+          alert("The Date must be Bigger or Equal to today date");
+          return false;
+     }
+    return true;
+}

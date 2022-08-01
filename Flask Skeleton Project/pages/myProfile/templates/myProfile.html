@@ -10,19 +10,37 @@
 {% block bodyTitle %}
     <h1>My Details</h1>
     <h2>My Profile</h2>
+    {% if session['user'] %}
+        <h3 class="userName_Sessin"> {{ session['user'] }} </h3>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
+    <div class="containerMyDetails">
+        <h4>First name : {{ user['First_name'] }}</h4>
+        <h4>Last Name : {{ user['Last_name'] }}</h4>
+        <h4>Email : {{ user['email'] }}</h4>
+        <h4>Age : {{ user['First_name'] }}</h4>
+        <h4>Academic institution : {{ user['Academic_institution'] }}</h4>
+        <h4>Gender : {{ user['Gender'] }}</h4>
+        <h4>City : {{ user['City'] }}</h4>
+        <div class="containerMyDetailsSmall">
+            <h4>About me : {{ user['about_me'] }}</h4>
+        </div>
+        <br>
+        <button id="Edit" onclick="EditFunction()"> Edit</button>
+    </div>
 
-    <nav>
-        <div class="container">
-            <form action="/action_page.php">
+    <div id="changeMyDetails" class="Details">
+        <div class="containerForm">
+            <span onclick="ClickFunctionClose()" class="close" title="Close Details">&times;</span>
+            <form action="{{ url_for('myProfile.update_user') }}" method="POST">
                 <div class="row">
                     <div class="col-25">
                         <label for="fname">First Name</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="fname" name="firstname" placeholder="Coral" disabled>
+                        <input type="text" id="fname" name="firstname" placeholder="Put your correct first name here">
                     </div>
                 </div>
                 <div class="row">
@@ -30,7 +48,7 @@
                         <label for="lname">Last Name</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Inbar" disabled>
+                        <input type="text" id="lname" name="lastname" placeholder="Put your correct last name here">
                     </div>
                 </div>
                 <div class="row">
@@ -38,15 +56,18 @@
                         <label for="Email">Email</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="Email" name="Email" placeholder="Coralel@post.bgu.ac.il" disabled>
+                        <input type="text"
+                               pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+                               id="Email" name="Email" placeholder="Put your correct Email here">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="lname">User Name</label>
+                        <label for="UserName">User Name</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="Uname" name="UserName" placeholder="YoniTal" disabled>
+                        <input type="text" id="Uname" name="UserName"
+                               placeholder="Sorry you can't change your user name" disabled>
                     </div>
                 </div>
                 <div class="row">
@@ -54,7 +75,7 @@
                         <label for="Gender">Gender</label>
                     </div>
                     <div class="col-75">
-                        <select id="Gender" name="Gender" disabled>
+                        <select id="Gender" name="Gender">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -65,7 +86,7 @@
                         <label for="Academic">Academic Institution</label>
                     </div>
                     <div class="col-75">
-                        <select id="Academic" name="Academic" disabled>
+                        <select id="Academic" name="Academic">
                             <option value="Male">BGU</option>
                             <option value="Female">Ariel</option>
                             <option value="Male">SCE</option>
@@ -79,7 +100,7 @@
                         <label for="City">City</label>
                     </div>
                     <div class="col-75">
-                        <select id="City" name="City" disabled>
+                        <select id="City" name="City">
                             <option value="australia">Beer Sheva</option>
                             <option value="canada">Afula</option>
                             <option value="usa">Ashkelon</option>
@@ -95,16 +116,17 @@
                         <label for="AboutMe">About me</label>
                     </div>
                     <div class="col-75">
-                        <textarea id="AboutMe" name="AboutMe" placeholder="I like TRX !!! Student in BGU"
-                                  style="height:200px" disabled></textarea>
+                        <textarea id="AboutMe" name="AboutMe" placeholder="Write something about you"
+                                  style="height:200px"></textarea>
                     </div>
                 </div>
                 <div class="row">
-                    <button id="Edit" onclick="EditFunction()"> Edit</button>
                     <br> <br>
-                    <button type="submit" id="FinishEdit" onclick="FinishEdit()" disabled> Finish</button>
+                    <button type="submit" id="FinishEdit"> Finish</button>
                 </div>
             </form>
         </div>
-    </nav>
+    </div>
+
+
 {% endblock %}

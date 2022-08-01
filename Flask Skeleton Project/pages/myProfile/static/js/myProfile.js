@@ -1,4 +1,4 @@
-function EditFunction(){
+/*function EditFunction(){
   document.getElementById("Edit").disabled = true;
   document.getElementById("fname").disabled = false;
   document.getElementById("lname").disabled = false;
@@ -22,4 +22,22 @@ function FinishEdit() {
   document.getElementById("City").disabled = true;
   document.getElementById("AboutMe").disabled = true;
   document.getElementById("FinishEdit").disabled = true;
+}*/
+function EditFunction(){
+  document.getElementById('changeMyDetails').style.display='block';
+}
+
+
+function ClickFunctionClose() {
+    document.getElementById('changeMyDetails').style.display = 'none';
+}
+
+// Get the modal
+var Details = document.getElementById('changeMyDetails');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == Details) {
+          Details.style.display = "none";
+      }
 }

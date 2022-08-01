@@ -4,23 +4,29 @@
 {% block page_head %}
     <link rel="stylesheet" href="{{ url_for('workoutDetails.static', filename='css/workoutDetails.css') }}"/>
     <script defer src="{{ url_for('workoutDetails.static' ,filename='js/workoutDetails.js') }}"></script>
+    <script defer src="{{ url_for('workoutDetails.static' ,filename='js/workoutDetails2.js') }}"></script>
 {% endblock %}
 
 
 {% block bodyTitle %}
     <h1>My Details</h1>
     <h2>Workouts Details </h2>
-    <h1>TRX</h1>
+
+    {% if session['user'] %}
+        <h3 class="userName_Sessin"> {{ session['user'] }} </h3>
+    {% endif %}
+
+
+    <h1>{% if session['user'] %}
+        <h1 class="userName_Sessin"> {{ workout['Workout_type'] }} </h1>
+    {% endif %}</h1>
+
 {% endblock %}
 
 {% block content %}
     <div class="train_text_box">
-        <p1>TRX is a workout system that uses gravity and body weight to perform
-            exercises to strengthen your core and increase muscular endurance,
-            while providing a total body workout.<br>
-            The best thing is that all fitness levels can join in because you’re
-            in control of how much your want to challenge yourself on each exercise!
-            Simply adjust your body position to add or decrease resistance.
+        <p1>
+            {{ workout['description'] }}
         </p1>
     </div>
 
@@ -65,8 +71,16 @@
             <div class="col-25">
                 <label for="NumOffParticipants">Number off participants:</label>
             </div>
-            <div class="col-50">
+            <div class="col-75">
                 <p class="output5" id="work_NumOffPart">{{ workout['number_of_participants'] }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="dur">Workout duration:</label>
+            </div>
+            <div class="col-75">
+                <p class="output5" id="work_NumOffPart">{{ workout['duration'] }}</p>
             </div>
         </div>
 
@@ -78,7 +92,6 @@
                 <div class="output6">
                     <div id="containerWorkouts">
                         <table id="work_Participants" class="table">
-
                             <thead>
                             <tr>
                                 <th>First name</th>
@@ -98,34 +111,57 @@
                             {% endfor %}
                         </table>
                     </div>
-                    <div class="joinUNbutton">
-                        <div id="JoinBtn">
-                            <div class="joinBtn" onclick="JoinWorkout()"></div>
+
+                    {% if answer_creator %}
+                        <div id="joinUNbutton">
+                            <a href="/join_workout" class="joinBtn"></a>
                         </div>
-                        <div id="Unsubscribe" hidden>
-                            <div class="unsubscribe" onclick="deleteMyself()"></div>
+                    {% endif %}
+
+
+                    {% if Im_at_list %}
+                        <div id="joinUNbutton">
+                            <a href="/delete_Myself" class="delete_me"></a>
                         </div>
-                    </div>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
 
+        {% if participants_massage %}
+            <div class="badInput">
+                <h1>{{ participants_massage }}</h1>
+            </div>
+        {% endif %}
+
+        {% if gender_massage %}
+            <div class="badInput">
+                <h1> {{ gender_massage }} {{ workout['Gender'] }} only!</h1>
+            </div>
+        {% endif %}
+
+
         <div class="row">
             <div class="col-25">
                 <label for="place">Meet you here:</label>
-                <div>City: Beer sheva</div>
-                <div>Address: גרץ 7</div>
-                <div id="map3">
+
+                <div id="map2"></div>
+                <div class="tab">
+                    <p>
+                    <div id="map"></div>
+                    <input name="add" id="add">
+                    <br><br><br>
+                    <input name="lat" id="lat" value="{{ workout['location_lat'] }}" type="hidden">
+                    <input name="lng" id="lng" value="{{ workout['location_lng'] }}" type="hidden">
+                    <input name="desc" id="desc" value="{{ workout['Workout_type'] }}" type="hidden">
 
 
-                    <script
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-                            defer
-                    ></script>
-
+                    </p>
                 </div>
 
             </div>
+
             <div class="col-75">
                 <p class="output7" id="work_Place"></p>
             </div>
@@ -133,8 +169,10 @@
 
     </div>
 
-
-
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ&callback=initMap&v=weekly"
+            defer
+    ></script>
 
 
 {% endblock %}

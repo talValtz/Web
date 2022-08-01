@@ -10,16 +10,18 @@
 
 
 {% block bodyTitle %}
+
     <h1>Welcome To TrainGether</h1>
-    {% if session['user'] %}
-        <h3 class="userName_Sessin"> {{ session['user'] }} </h3>
-    {% endif %}
+
 
     <h2>You have reached a place where you can find partners for every training,</h2>
     <h2> get motivated, create experiences, and meet new partners.</h2>
 {% endblock %}
 
 {% block content %}
+    {% if session['user'] %}
+        <h3 class="userName_Sessin">Hello {{ session['user'] }} </h3>
+    {% endif %}
 
     <div id="containerMP">
         <div id="textMap">
@@ -31,12 +33,9 @@
         <div id="map2">
 
 
-            <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-                    defer
-            ></script>
-
         </div>
+        <input name="lat" id="latlng" value="{{ listworkouts }}">
+
 
         <div id="Info">
             <div class="images-selector">
@@ -53,27 +52,16 @@
     </div>
 
 
-    <div>
-        <h1>Flask Google Maps Example</h1>
-
-        <h2> Google Dev Bus - Rua Quatá, 255 </h2>
-        {% with %}
-
-            {% set location=(-23.599097,-46.675903) %}
-            {% set style="width:500px;height:500px;" %}
 
 
-            <iframe loading="lazy"
-                    allowfullscreen
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ
-                    &q=Space+Needle,Seattle+WA">
-            </iframe>
-
-
-        {% endwith %}
-    </div>
-
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ&callback=initMap&v=weekly"
+            defer
+    ></script>
+    <script
+            src="https://polyfill.io/v3/polyfill.min.js?features=default"
+            defer
+    ></script>
 
 
 {% endblock %}

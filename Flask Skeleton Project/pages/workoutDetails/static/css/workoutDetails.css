@@ -16,36 +16,50 @@
     padding: 30px;
 }
 
-/* the position of the join button*/
-.joinUNbutton {
-    margin-top: -18%;
-    margin-right: 10%;
-    float: right;
+.badInput {
+    color: red;
+    margin-left: 30%;
+    bottom: 0%;
 }
 
-#JoinBtn .joinBtn {
+/* the position of the join button*/
+#joinUNbutton {
+    margin-top: -10%;
+    margin-right: 20%;
+    float: right;
+    border-radius: 50%;
+
+
+}
+
+.joinBtn {
     background-image: url(../media/JoinWorkout.png);
     background-repeat: no-repeat;
     background-size: cover;
     align-self: flex-end;
     width: 100px;
     height: 100px;
+    position: absolute;
 }
 
-#JoinBtn { /* affect the text*/
+/*
+#joinBtn { /* affect the text
     text-align: center;
     color: #81c6cf;
     font-size: 25px;
-}
+}*/
 
-.unsubscribe {
-    /*margin: 35px 0 0 50px;*/
+.delete_me {
+
     background-image: url(../media/Unsubscribe.png);
     background-repeat: no-repeat;
     background-size: cover;
     align-self: flex-end;
-    width: 80px;
-    height: 80px;
+    margin-top: -4%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+
 }
 
 #Unsubscribe {
@@ -106,6 +120,20 @@ table {
     width: 30%;
     margin: auto;
     margin-bottom: 10px;
+}
+
+#add {
+    width: 200px;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#map2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 380px;
+    grid-area: map;
 
 
 }

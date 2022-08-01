@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, session, redirect, url_fo
 from utilities.models.userModel import userModel
 
 # main_menu blueprint definition
-logIn = Blueprint('logIn', __name__, static_folder='static', static_url_path='/logIn', template_folder='templates')
+logIn = Blueprint('logIn',__name__, static_folder='static', static_url_path='/logIn', template_folder='templates')
 
 
 @logIn.route('/')
@@ -28,12 +28,10 @@ def login():
     session["user"] = "tt"
     print(len(result))
     if len(result) == 0:
-        if len(userModel.LoginCheckExist(useName)) ==0 :
+        if len(userModel.LoginCheckExist(useName)) == 0:
             return render_template("logIn.html", msg="Invalid, try again")
         return render_template("logIn.html", msg="Invalid password, try again")
 
-
-
     session["user"] = result[0][0]  # result[0][0] means first record and first column that is ID attribute
-    print( session["user"] )
+    print(session["user"])
     return redirect(url_for('homepage.index'))

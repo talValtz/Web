@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-    <form id="regForm" action="">
+    <form id="regForm" action="/createNew" method="post">
 
 
         <!-- One "tab" for each step in the form: -->
@@ -27,12 +27,12 @@
                 </div>
                 </p>
                 <div class="col-75">
-                    <select id="Academic" name="Academic">
-                        <option value="Male">Yoga</option>
-                        <option value="Female">TRX</option>
-                        <option value="Male">Running</option>
-                        <option value="Female">Swimming</option>
-                        <option value="Male">Tennis</option>
+                    <select id="type" name="type">
+                        <option value="Yoga">Yoga</option>
+                        <option value="TRX">TRX</option>
+                        <option value="Running">Running</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Tennis">Tennis</option>
                     </select>
                 </div>
                 <p>
@@ -58,7 +58,7 @@
                     <select id="Gender" name="Gender"><!-- add gender id for TRX-->
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
-                        <option value="Male">Mixed</option>
+                        <option value="Mixed">Mixed</option>
                     </select>
                 </div>
 
@@ -69,7 +69,7 @@
                 </div>
                 </p>
                 <div class="col-75">
-                    <input type="number" id="num_of_participants" min="1" max="50" placeholder="Number...">
+                    <input type="number" name="num_of_participants" id="num_of_participants" min="1" max="50" placeholder="Number...">
                 </div>
 
             </div>
@@ -77,11 +77,10 @@
         <div class="tab">Where:
             <p>
             <div id="map"></div>
+            <input name="lat" id="lat">
+            <input  name="lng" id="lng">
 
-            <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-                    defer
-            ></script>
+
             </p>
 
         </div>
@@ -95,7 +94,7 @@
             </p>
 
             <div class="col-75">
-                <input type="date" id="Date" min="2022-01-02"> <!-- added Date id for TRX-->
+                <input type="date" name="Date" id="Date" min="2022-01-02" ONCHANGE="TDate()" required> <!-- added Date id for TRX-->
             </div>
 
             <p>
@@ -106,7 +105,7 @@
                 </div>
                 </p>
                 <div class="col-75">
-                    <input type="time" id="Time">
+                    <input name="time" type="time" id="Time">
                 </div> <!-- added Time id for TRX-->
 
             </div>
@@ -117,7 +116,7 @@
                 </div>
                 </p>
                 <div class="col-75">
-                    <input type="number" id="num_of_participants" min="1" max="90" placeholder="Minute...">
+                    <input type="number" name="duration" id="duration" min="1" max="90" placeholder="Minute...">
                 </div>
 
 
@@ -129,6 +128,8 @@
             <div style="float:right;">
                 <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                 <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                <input type="submit" id="submit" value="submit"></button>
+
             </div>
         </div>
 
@@ -141,7 +142,10 @@
         </div>
 
     </form>
-
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDAWTUq6im0hE3arSiDZ0Aivj5V64M4jQ&callback=initMap&v=weekly"
+            defer
+    ></script>
 
 
 {% endblock %}

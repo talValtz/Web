@@ -10,3 +10,30 @@ function ViewSearch() {
 
 
 }
+function ClickSearchTable(){
+  document.getElementById('openSearchTable').style.display='block';
+}
+
+function ClickFunctionCloseSearchTable(){
+  document.getElementById('openSearchTable').style.display='none';
+}
+
+
+var modal = document.getElementById('openSearchTable');
+  // When the user clicks anywhere outside of the modalTable, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+}
+
+function TDate() {
+    var UserDate = document.getElementById("PickDate").value;
+    var ToDate = new Date();
+
+    if (new Date(UserDate).getTime() <= ToDate.getTime()) {
+          alert("The Date must be Bigger or Equal to today date");
+          return false;
+     }
+    return true;
+}

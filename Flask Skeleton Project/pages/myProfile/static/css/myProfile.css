@@ -1,8 +1,8 @@
 #Edit, #FinishEdit{
-  display: inline-block;
+  display: block;
   background-color: #000000;
   color: white;
-  width: 500px;
+  width: 100px;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -15,7 +15,7 @@
   background: linear-gradient(to bottom right, rgba(239, 159, 172, 0.82), rgba(154, 175, 246, 0.865));
 
 }
-/*28.5*/
+
 /*fill details input box style */
 input[type=text], select, textarea, input[type=date], input[type=time], #PickTrainType {
   width: 100%;
@@ -44,12 +44,13 @@ input[type=submit]:hover {
   background-color: #5e625f;
 }
 
-.container {
+.containerForm {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
   box-sizing: border-box;
 }
+
 
 .col-25 {
   float: left;
@@ -80,10 +81,9 @@ input[type=submit]:hover {
 /*28.5*/
 .col-75 {
   float: left;
-  width: 75%;
+  width: 40%;
   margin-top: 6px;
 }
-
 
 
 /* Clear floats after the columns */
@@ -91,4 +91,57 @@ input[type=submit]:hover {
   content: "";
   display: table;
   clear: both;
+}
+.containerMyDetails, .containerMyDetailsSmall{
+  border: 6px solid;
+  border-radius: 40px;
+  margin: 10px auto;
+  padding: 10px;
+  align-content: center;
+
+}
+
+.containerMyDetailsSmall{
+  border-color: rgb(161, 173, 216);
+  display: inline-block;
+  width: 280px;
+
+}
+
+.containerMyDetails{
+  border-color: rgb(223, 172, 176);
+  width:30%;
+    border-style: outset;
+
+
+
+}
+
+.Details {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(148, 145, 145);
+    padding-top: 60px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
 }

@@ -12,8 +12,9 @@ def redirect_workouts():
     print(session["user"])
     print("fffffff")
     cw = list(workoutsModel.ViewMyWorkouts(session["user"]))
+    pw=list(workoutsModel.ViewCallendar(session["user"]))
     print(cw)
-    return render_template('workouts.html', current_user=session["user"], workoutsCreated=cw)
+    return render_template('workouts.html', current_user=session["user"],pws=pw, workoutsCreated=cw)
 
 @workouts.route('/WorkoutDetails', methods=['POST'])
 def workoutDetails():

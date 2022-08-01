@@ -31,14 +31,28 @@
                         <input type="hidden" name="WorkoutID" value="{{ workout['trainingID'] }}">
                         <input type="submit" value="Watch details" id="details">
                     </form>
+                </div>
+            {% endfor %}
 
 
+
+            <h1>Workouts I Participant</h1>
+
+
+            {% for  pw in pws %}
+                <div class="containerWorkout">
+                    <h3>Workout Type: {{ pw['Workout_type'] }}</h3>
+                    <h3> Date: {{ pw['workout_date'] }}</h3>
+                    <h3> Date: {{ pw['workout_time'] }}</h3>
+                    <form action="/WorkoutDetails" method="post">
+                        <input type="hidden" name="WorkoutID" value="{{ pw['trainingID'] }}">
+                        <input type="submit" value="Watch details" id="details">
+                    </form>
                 </div>
             {% endfor %}
 
 
         </div>
-
     </div>
 
 
