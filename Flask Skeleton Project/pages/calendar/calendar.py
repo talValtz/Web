@@ -11,8 +11,5 @@ def redirect_workouts():
 
 @calendar.route('/calendar2')
 def redirect_workouts2():
-     print((session["user"]))
      cw = list(workoutsModel.ViewCallendar(session["user"]))
-     print(cw)
-
      return render_template('calendar2.html',events=cw)

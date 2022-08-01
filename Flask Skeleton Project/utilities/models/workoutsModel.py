@@ -47,9 +47,6 @@ class workoutsModel:
 		query = "SELECT Workout_type FROM training WHERE trainingID=%s"
 		return dbManager.fetch(query, (trainingID,))
 
-	def list_Workouts_by_inputs(self, Workout_type, workout_date, workout_time, time_limit):
-		query = "SELECT * FROM training WHERE Workout_type=%s AND workout_date = %s AND workout_time>=%s AND workout_time<=%s"
-		return dbManager.fetch(query, (Workout_type, workout_date, workout_time, time_limit,))
 
 
 

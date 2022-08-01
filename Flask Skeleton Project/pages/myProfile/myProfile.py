@@ -15,7 +15,6 @@ def ChangeDetails():
 
 @myProfile.route('/update_user', methods=["POST"])
 def update_user():
-    print(session['user'])
     User_name = session['user']
     First_name = request.form['firstname']
     Last_name = request.form['lastname']
@@ -25,5 +24,4 @@ def update_user():
     City = request.form['City']
     about_me = request.form['AboutMe']
     result = userModel.updateUser(User_name, First_name, Last_name, email, Academic_institution, Gender, City, about_me)
-    print(result)
     return redirect(url_for("myProfile.ChangeDetails"))
