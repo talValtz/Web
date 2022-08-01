@@ -42,7 +42,6 @@ class workoutsModel:
 		query="SELECT * From training ORDER BY trainingID DESC LIMIT 1"
 		return dbManager.fetch(query, ())
 
-	#inbaraaa
 	def show_type(self, trainingID):
 		query = "SELECT Workout_type FROM training WHERE trainingID=%s"
 		return dbManager.fetch(query, (trainingID,))

@@ -28,5 +28,5 @@ def redirect_CreateNew():
     result = workoutsModel.insertWortkour(type, lat, lng, gender, date, time, number, session["user"],desc,duration)
     w=list(workoutsModel.lastInserted())
     w1=w[0]
-    resultParticipant=participantsModel.insertParticipant(w1[0],session["user"])
+    resultParticipant=participantsModel.JoinWorkout(session["user"],w1[0])
     return redirect('/workouts')
