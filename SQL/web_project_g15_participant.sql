@@ -1,0 +1,14 @@
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Mimi', 1);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Nina', 1);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Cori', 2);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Cori', 3);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Cori', 4);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Mimi', 15);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Mimi', 16);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('HarryTheKing', 17);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('HarryTheKing', 18);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('lilo', 18);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('Cori', 19);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('HarryTheKing', 19);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('HarryTheKing', 20);
+INSERT INTO `web-project-g15`.participant (participant, training) VALUES ('lilo', 21);
